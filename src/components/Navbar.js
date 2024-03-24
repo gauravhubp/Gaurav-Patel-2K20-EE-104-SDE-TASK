@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import intersect from "./Intersect.png";
+import "../App.css";
+import intersect from "./images/Intersect.png";
 
 const Navbar = () => {
   const items = [
