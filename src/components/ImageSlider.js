@@ -18,9 +18,10 @@ const ImageSlider = ({slides}) => {
  let [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
  const handleClick = (index) => {
-  if(selectedImageIndex===null) {setSelectedImageIndex(index);}
+  if(selectedImageIndex===null) 
+  {setSelectedImageIndex(index);}
   else
-   {setSelectedImageIndex(null);;}
+   {setSelectedImageIndex(null);}
  };
 
  if(!Array.isArray(slides) || slides.length<=0)
@@ -36,16 +37,14 @@ const ImageSlider = ({slides}) => {
     {SliderData.map((slide,index) => {
       return (
         <div>
-          {index === (current==0 ? length-1 : current-1) && (<img src={slide.image} alt="img" className='imagebk'
-          onClick={() => handleClick(index)}/>)}
+          {index === (current==0 ? length-1 : current-1) && (<img src={slide.image} alt="img" className='imagebk' />)}
          
          <div className={index === current ? 'slide active' : 'slide'} key={index}>
           {index === current && (<img src={slide.image} alt="img" className={selectedImageIndex === index ? 'highlighted' : 'image'}
           onClick={() => handleClick(index)}/>)}
          </div>
 
-         {index === (current==length-1 ? 0 : current+1) && (<img src={slide.image} alt="img" className='imagefk'
-          onClick={() => handleClick(index)}/>)}
+         {index === (current==length-1 ? 0 : current+1) && (<img src={slide.image} alt="img" className='imagefk' />)}
       </div>
     )      
   })}
